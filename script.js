@@ -24,10 +24,21 @@ const gameBoard = {
         if (getElement === null){
             this.board[rowNum][colNum] = playerMarker;
         } else {
-            alert(`This cell is already occupied with ${playerMarker}, please choose another cell.`)
+            alert(`This cell is already occupied with a marker, please choose another cell.`)
         }
         this.render();
+    },
+
+    reset: function() {
+        this.board.forEach((row, i) => {
+            row.forEach((_, j) => {
+                this.board[i][j] = null;
+            });
+        });
+
+        this.render();
     }
+    
 }
 
  
