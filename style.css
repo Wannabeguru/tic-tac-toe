@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5em;
+    width: 50vw;
+    max-width: 50vh;
+}
+
+.square {
+    background-color: yellow;
+    border: solid black 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.square::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
