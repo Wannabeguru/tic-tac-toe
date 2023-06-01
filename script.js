@@ -41,6 +41,41 @@ const gameBoard = {
     
 }
 
- 
+const player = (playerName, playerMarker) => {
+    const name = playerName;
+    const marker = playerMarker;
+    return {name, marker};
 
+}
+
+const gameFlow = {
+    currentState: null,
+    player1: player('Player 1', 'X'),
+    player2: player('Player 2', 'O'),
+    currentPlayer: null,
+   
+    updateState: function() {
+        this.currentState = gameBoard.board;
+    },
+
+    startGame: function() {
+        gameBoard.reset();
+        this.currentPlayer = this.player1;
+        this.updateState();
+    },
+
+    nextTurn: function() {
+        if (this.currentPlayer === player1) {
+            this.currentPlayer === this.player2;
+        } else {
+            this.currentPlayer = this.player1;
+        }
+        this.updateState();
+    }
+}
+
+const boardElement = document.getElementById('board-container');
+const updateGameBoard = () => {
+    
+}
 gameBoard.render();
